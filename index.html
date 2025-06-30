@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Latest Tech and News Auto-Blog" />
+  <meta name="keywords" content="Tech, News, Auto Blog, Free Traffic" />
+  <meta name="author" content="AutoBlog System" />
+  <title>Auto Blog - Earn with Adsterra</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+    header { background: #222; color: white; padding: 1rem; text-align: center; }
+    main { padding: 1rem; }
+    article { background: white; margin-bottom: 1rem; padding: 1rem; border-radius: 5px; }
+    .cta-button {
+      display: block;
+      width: 100%;
+      background-color: #28a745;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      text-decoration: none;
+      margin-top: 10px;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🔥 Trending Auto Blog</h1>
+    <p>Earn with Smartlink + Free Traffic</p>
+  </header>
+  <main id="blog-feed">
+    <!-- Auto Content Injected Here -->
+  </main>
+  <a class="cta-button" href="https://www.profitableratecpm.com/my1dmgzw5?key=410c20d30ba8e00b7968ec87d50ff1d2" target="_blank">👉 Click Here to Continue</a>
+  <script>
+    async function loadFeed() {
+      const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://feeds.bbci.co.uk/news/technology/rss.xml');
+      const data = await response.json();
+      const feed = document.getElementById("blog-feed");
+      data.items.slice(0, 5).forEach(item => {
+        const article = document.createElement("article");
+        article.innerHTML = `<h2>${item.title}</h2><p>${item.pubDate}</p><p>${item.description}</p><a href="${item.link}" target="_blank">Read more</a>`;
+        feed.appendChild(article);
+      });
+    }
+    loadFeed();
+  </script>
+</body>
+</html>
